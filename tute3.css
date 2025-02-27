@@ -1,0 +1,66 @@
+.banner
+{
+   width:100%;
+   height:100vh;
+   text-align: center;
+   overflow: hidden;
+   position: relative;
+   background-color:rgb(13, 2, 24);
+}
+.banner .slider{
+   position:absolute;
+   width:200px;
+   height:250px;
+   top:100px;
+left:calc(50% - 100px);
+transform-style: preserve-3d;
+transform:perspective(1000px);
+animation:autoRun 15s linear infinite;
+
+}
+.banner .slider .item{
+   position:absolute;
+   inset: 0 0 0 0;
+transform:
+rotateY(calc( (var(--position) - 1 ) * (360/var(--quantity))*99deg))
+translateZ(350px)
+}
+@keyframes autoRun{
+from{
+   transform: perspective(1000px)  rotateY(60deg);
+}to{
+   transform: perspective(1000px)  rotateY(360deg);
+}
+}
+.banner .slider .item img{
+   width:100%;
+   height:100%;
+   object-fit:cover;
+}
+.banner .content{
+   color:aqua;
+   position:absolute;
+   bottom:0;
+   left:50%;
+   transform:translateX(-50%);
+   width:min(1400px,100vh);
+   height:max-content;
+   padding-bottom: 100px;
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+
+
+}
+.banner .content h1{
+   font-family: 'ICA Rubric';
+   font-size: 10em;
+   line-height: 1rem;
+   color:rgb(142, 221, 14)
+}
+.content{
+   text-align: center;
+   position: absolute;
+   display: flex;
+   top:400px;
+}
